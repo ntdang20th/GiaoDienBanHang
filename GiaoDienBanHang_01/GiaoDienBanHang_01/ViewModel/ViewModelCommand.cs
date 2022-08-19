@@ -20,7 +20,7 @@ namespace GiaoDienBanHang_01.ViewModel
             _canExcuteAction = null;
         }
 
-        public ViewModelCommand(Action<object> excuteAction, Action<object> canExcuteAction)
+        public ViewModelCommand(Action<object> excuteAction, Predicate<object> canExcuteAction)
         {
             _excuteAction = excuteAction;
             _canExcuteAction = canExcuteAction;
@@ -41,7 +41,7 @@ namespace GiaoDienBanHang_01.ViewModel
 
         public void Execute(object parameter)
         {
-            _canExcuteAction(parameter);
+            _excuteAction(parameter);
         }
     }
 }

@@ -6,7 +6,7 @@ GO
 CREATE TABLE NGUOIDUNG
 (
 	Username varchar(200) PRIMARY KEY,
-	Passwrd varchar(200),
+	Password varchar(200),
 	FirstName nvarchar(100),
 	LastName nvarchar(100)
 )

@@ -63,7 +63,8 @@
                     
                     <!--Menu Button-->
                     <RadioButton Style="{StaticResource menuButton}" IsChecked="True"
-                                 Tag="{StaticResource color1}">
+                                 Tag="{StaticResource color1}"
+                                 Command="{Binding ShowHomeViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Dashboard" Style="{StaticResource menuButtonText}"/>
@@ -71,7 +72,8 @@
                     </RadioButton>
 
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color2}">
+                                 Tag="{StaticResource color2}"
+                                 Command="{Binding ShowCustomerViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="UserGroup" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Customer" Style="{StaticResource menuButtonText}"/>
@@ -145,7 +147,7 @@
                         <!--Header / Caption-->
                         <RowDefinition Height="35"/>
                         <!--Content Section / Child Views-->
-                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     
                     <!--ControlBar-->
@@ -191,12 +193,12 @@
                         <StackPanel Grid.Column="0"
                                     Orientation="Horizontal"
                                     VerticalAlignment="Center">
-                            <fa:IconImage Icon="Home"
+                            <fa:IconImage Icon="{Binding Icon}"
                                           Height="20"
                                           Width="20"
                                           Foreground="{StaticResource titleColor2}"
                                           Margin="35 0 10 0"/>
-                            <TextBlock Text="Dashboard"
+                            <TextBlock Text="{Binding Caption}"
                                        Foreground="{StaticResource titleColor2}"
                                        FontSize="16"
                                        FontFamily="Montserrat"
@@ -214,7 +216,7 @@
                             <Button Style="{StaticResource iconButton}"
                                     Tag="{StaticResource color1}">
                                 <fa:IconImage Icon="AngleDown" 
-                                              Height="18" Width="18"
+                                              Height="12" Width="12"
                                               Style="{StaticResource iconButtonIcon}"/>
                             </Button>
 
@@ -252,6 +254,11 @@
                         </StackPanel>
                         
                     </Grid>
+                    
+                    <!--Content section / Child view-->
+                    <ContentControl Content="{Binding CurrentChildView}"
+                                    Margin="15"
+                                    Grid.Row="2"/> 
                 </Grid>
             </Border>
         </Grid>

@@ -32,7 +32,7 @@ namespace GiaoDienBanHang_01.View
         private void pnlCtrlBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             WindowInteropHelper helper = new WindowInteropHelper(this);
-            SendMessage(helper.Handle, 161, 2, 0);
+            SendMessage(helper.Handle, 162, 2, 0);
         }
 
         private void pnlCtrlBar_MouseEnter(object sender, MouseEventArgs e)
